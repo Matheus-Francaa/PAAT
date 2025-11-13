@@ -1,51 +1,102 @@
-<div class="container">
-    <header class="header">
-        <div class="logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="10" stroke="#0052CC" stroke-width="2" />
-                <path d="M8 12L11 15L16 9" stroke="#0052CC" stroke-width="2" stroke-linecap="round" />
-            </svg>
-            <span class="logo-text">Serpro</span>
+<!-- Header Gov.br -->
+<div class="br-header" data-sticky="data-sticky">
+    <div class="container-lg">
+        <div class="header-top">
+            <div class="header-logo">
+                <img src="https://www.gov.br/++theme++padrao_govbr/img/govbr-logo-large.png" alt="Governo Federal" />
+                <div class="header-sign">PAAT</div>
+            </div>
+            <div class="header-actions">
+                <div class="header-links dropdown">
+                    <button class="br-button circle" type="button" data-toggle="dropdown" aria-label="Acesso rápido">
+                        <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+                    </button>
+                    <div class="br-list">
+                        <a class="br-item" href="#"><i class="fas fa-user"></i> Perfil</a>
+                        <a class="br-item" href="#"><i class="fas fa-cog"></i> Configurações</a>
+                    </div>
+                </div>
+                <div class="header-login">
+                    <div class="header-sign-in">
+                        <button class="br-sign-in" type="button" data-trigger="login">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                            <span class="d-sm-inline">Entrar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="header-actions">
-            <button class="icon-button" aria-label="Perfil">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="8" r="4" stroke="#0052CC" stroke-width="2" />
-                    <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="#0052CC"
-                        stroke-width="2" />
-                </svg>
-            </button>
-            <button class="icon-button" aria-label="Configurações">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="3" stroke="#0052CC" stroke-width="2" />
-                    <path
-                        d="M12 1V5M12 19V23M23 12H19M5 12H1M20.5 20.5L17.5 17.5M6.5 6.5L3.5 3.5M20.5 3.5L17.5 6.5M6.5 17.5L3.5 20.5"
-                        stroke="#0052CC" stroke-width="2" stroke-linecap="round" />
-                </svg>
-            </button>
-        </div>
-    </header>
-
-    <main class="main-content">
-        <h1 class="title">PAAT</h1>
-        <p class="subtitle">Plataforma de Adaptação a de Artefatos Textuais</p>
-
-        <div class="search-container">
-            <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="8" cy="8" r="6" stroke="#666" stroke-width="2" />
-                <path d="M13 13L18 18" stroke="#666" stroke-width="2" stroke-linecap="round" />
-            </svg>
-            <input type="text" class="search-input" placeholder="Digite o link do repositório" [(ngModel)]="searchQuery"
-                (keyup.enter)="onSearch()" />
-        </div>
-
-        <div class="action-buttons">
-            <button class="button button-secondary" (click)="goToMyRepositories()">
-                Meus Repositórios
-            </button>
-            <button class="button button-primary" (click)="findArtifacts()">
-                Procurar artefatos
-            </button>
-        </div>
-    </main>
+    </div>
 </div>
+
+<!-- Conteúdo Principal -->
+<main class="d-flex flex-fill mb-5" id="main">
+    <div class="container-lg">
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 col-md-10 col-lg-8 text-center">
+                <!-- Título -->
+                <h1 class="display-1 text-primary-default mb-3"
+                    style="font-weight: 700; font-size: clamp(3rem, 8vw, 6rem);">
+                    PAAT
+                </h1>
+                <p class="h4 text-primary-default mb-5">
+                    Plataforma de Adaptação de Artefatos Textuais
+                </p>
+
+                <!-- Campo de Busca -->
+                <div class="br-input input-button mb-4">
+                    <label for="search-repo" class="sr-only">Digite o link do repositório</label>
+                    <input id="search-repo" type="text" class="br-input-lg" placeholder="Digite o link do repositório"
+                        [(ngModel)]="searchQuery" (keyup.enter)="onSearch()" />
+                    <button class="br-button circle" type="button" aria-label="Pesquisar" (click)="onSearch()">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+                    <button class="br-button secondary" type="button" (click)="goToMyRepositories()">
+                        Meus Repositórios
+                    </button>
+                    <button class="br-button primary" type="button" (click)="findArtifacts()">
+                        Procurar artefatos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer Gov.br -->
+<footer class="br-footer">
+    <div class="container-lg">
+        <div class="info">
+            <div class="text-down-01 text-medium pb-3">
+                <strong>Plataforma de Adaptação de Artefatos Textuais - PAAT</strong>
+            </div>
+        </div>
+    </div>
+    <div class="br-divider my-3"></div>
+    <div class="container-lg">
+        <div class="d-none d-sm-block">
+            <div class="row align-items-end justify-content-between py-5">
+                <div class="col social-network">
+                    <p class="text-up-01 text-extra-bold text-uppercase">Redes Sociais</p>
+                    <a class="mr-3" href="https://www.facebook.com/governodobrasil" aria-label="Facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a class="mr-3" href="https://twitter.com/govbr" aria-label="Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a class="mr-3" href="https://www.instagram.com/governodobrasil/" aria-label="Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="col assigns text-right">
+                    <img src="https://www.gov.br/++theme++padrao_govbr/img/govbr-logo-large.png"
+                        alt="Governo Federal" />
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
